@@ -1,0 +1,4 @@
+github_token = "TOKEN"
+github_owner = "USER"
+repository_name = "REPO_NAME"
+repository_description = "REPO_DESCRIPTION"
