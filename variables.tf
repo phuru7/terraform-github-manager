@@ -10,12 +10,20 @@ variable "github_owner" {
   sensitive   = true
 }
 
-variable "repository_name" {
-  description = "Name of the repository"
-  type        = string
+variable "repositories" {
+  description = "Map of repositories to create"
+  type = map(object({
+    name = string
+    description = string
+  }))
 }
 
-variable "repository_description" {
-  description = "Description of the repository"
-  type        = string
-}
+#variable "repository_name" {
+#  description = "Name of the repository"
+#  type        = string
+#}
+
+#variable "repository_description" {
+#  description = "Description of the repository"
+#  type        = string
+#}

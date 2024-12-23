@@ -1,4 +1,12 @@
 github_token = "TOKEN"
 github_owner = "USER"
-repository_name = "REPO_NAME"
-repository_description = "REPO_DESCRIPTION"
+repositories = {
+  repo1 = {
+    name = "REPO_NAME_01"
+    description = "REPO_DESCRIPTION_01"
+  }
+  repo2 = {
+    name = "REPO_NAME_02"
+    description = "REPO_DESCRIPTION_02"
+  }
+}
