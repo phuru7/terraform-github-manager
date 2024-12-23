@@ -1,17 +1,39 @@
-## Project Structure
+# Terraform GitHub Repository Manager
 
-This repository is managed with Terraform and follows these conventions:
+This project uses Terraform to manage multiple GitHub repositories following infrastructure as code best practices.
 
-### Branches
-- `main`: Main project branch
-- `develop`: Development branch
+## Project Architecture
 
-### Protections
-- Main branch is protected
-- Code review is required for pull requests
+This project implements a modular approach to manage multiple GitHub repositories simultaneously using Terraform. The structure allows creating and managing several repositories while maintaining consistent configuration and branch protection policies across all of them.
+
+### Repository Structure
+Each repository is created with:
+- `main`: Primary branch with protection rules
+- `develop`: Development branch for ongoing work
+
+### Protection Policies
+All repositories implement these security measures:
+- Protected main branch
+- Required code reviews for pull requests
+- Automated branch protection rules
+
+## Configuration
+Repositories are defined in the `terraform.tfvars` file using this structure:
+
+```hcl
+repositories = {
+  repo1 = {
+    name        = "first-repository"
+    description = "Description for first repository"
+  }
+  repo2 = {
+    name        = "second-repository"
+    description = "Description for second repository"
+  }
+}
+```
 
 ## Getting Started
-
 1. Clone the repository
 ```bash
 git clone ${github_repository.repo.ssh_clone_url}
@@ -22,11 +44,4 @@ git clone ${github_repository.repo.ssh_clone_url}
 git checkout develop
 git checkout -b feature/your-new-feature
 ```
-
-## Contributing
-
-1. Create a branch from develop
-2. Make your changes and commit
-3. Create a Pull Request to develop
-4. After review, it will be merged to main
 
